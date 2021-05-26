@@ -22,6 +22,10 @@ $query = mysqli_query($conn, $sql);
                 <label for="productWeight">وزن</label>
                 <input type="number" class="form-control text-right" id="productWeight" name="productWeight" aria-describedby="productWeight" required>
             </div>
+            <div class="form-group">
+                <label for="productQuantity">تعداد</label>
+                <input type="number" class="form-control text-right" id="productQuantity" name="productQuantity" aria-describedby="productQuantity" required>
+            </div>
             <div class="form-group text-right">
                 <label for="warehouses">متعلق به انبار </label>
                 <select id="warehouses" class="form-control" name="warehouses" required>

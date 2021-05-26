@@ -35,7 +35,16 @@ $product_query = $conn->query($sql);
                 <?php
                 while ($row = mysqli_fetch_array($product_query)) { ?>
                     <tr>
-                        <td><?php echo $row['quantity'] ?></td>
+                        <td><?php
+                        $product_id = $row['id'];
+                        $sql_find_quan = "SELECT quantity FROM prod_ware WHERE product_id = '$product_id' AND warehouse_id = '$ware_id'";
+                        $query1 = $conn->query($sql_find_quan);
+                        $quantity = array();
+                        while ($res1 = $query1->fetch_assoc()) {
+                            $quantity[] = $res1['quantity'];
+                        }
+                        echo "$quantity[0]";
+                        ?></td>
                         <td><?php echo $row['weight'] ?></td>
                         <td><?php echo $row['price'] ?></td>
                         <td><?php echo $row['name'] ?></td>
